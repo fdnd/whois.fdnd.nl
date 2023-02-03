@@ -15,7 +15,9 @@ export const actions = {
 		const nickname = fdata.get('nickname');
 		const avatar = fdata.get('avatar');
 		const gitHubHandle = fdata.get('gitHubHandle');
+
 		const bio = await htmlToSlateAST(fdata.get('bio'));
+
 		const website = fdata.get('website');
 
 		const hygraph = new GraphQLClient(HYGRAPH_URL, {
