@@ -4,7 +4,7 @@ import { HYGRAPH_KEY, HYGRAPH_URL } from '$env/static/private';
 const responseInit = {
 	headers: {
 		'content-type': 'application/json',
-		'cache-control': 'public, max-age=3600',
+		'cache-control': 'public, max-age=0',
 		'Access-Control-Allow-Credentials': 'true',
     	'Access-Control-Allow-Origin': '*',
     	'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
