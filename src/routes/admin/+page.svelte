@@ -39,6 +39,7 @@
 
 <section>
 	<h2>Member aanpassen</h2>
+	<p>Het kan even duren voordat de aangepaste data in het CMS gepubliceerd wordt (~ 1 minuut)!</p>
 	<form method="post">
 		<label for="id">id:</label>
 		<input
@@ -94,8 +95,9 @@
 		padding: var(--component-padding);
 		border-radius: var(--rounded);
 	}
+
 	label {
-		margin: 0.2rem 0;
+		margin: 1rem 0 0.2rem;
 		display: block;
 		font-size: 1.6rem;
 	}
@@ -128,5 +130,14 @@
 		background: var(--c-blue);
 		color: var(--c-green);
 		border-radius: var(--pilled);
+		transition:.25s
+	}
+	input[type='submit']:hover {
+		transform:scale(1.05)
+	}
+	input[type='submit']:focus {
+		transform:scale(1.05);
+		background: var(--c-green);
+		color: var(--c-blue);
 	}
 </style>
