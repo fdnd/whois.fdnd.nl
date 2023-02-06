@@ -8,7 +8,13 @@ const responseInit = {
 	}
 };
 const hygraph = new GraphQLClient(HYGRAPH_URL, {
-	headers: { Authorization: `Bearer ${HYGRAPH_KEY}` }
+	headers: { 
+		'Authorization': `Bearer ${HYGRAPH_KEY}`,
+		'Access-Control-Allow-Credentials': 'true',
+    	'Access-Control-Allow-Origin': '*',
+    	'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+    	'Access-Control-Allow-Headers':  'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+	}
 });
 
 export async function GET({ url }) {
