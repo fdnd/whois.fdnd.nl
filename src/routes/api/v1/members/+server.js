@@ -4,16 +4,16 @@ import { HYGRAPH_KEY, HYGRAPH_URL } from '$env/static/private';
 const responseInit = {
 	headers: {
 		'content-type': 'application/json',
-		'cache-control': 'public, max-age=3600'
-	}
-};
-const hygraph = new GraphQLClient(HYGRAPH_URL, {
-	headers: { 
-		'Authorization': `Bearer ${HYGRAPH_KEY}`,
+		'cache-control': 'public, max-age=3600',
 		'Access-Control-Allow-Credentials': 'true',
     	'Access-Control-Allow-Origin': '*',
     	'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
     	'Access-Control-Allow-Headers':  'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+	}
+};
+const hygraph = new GraphQLClient(HYGRAPH_URL, {
+	headers: { 
+		Authorization: `Bearer ${HYGRAPH_KEY}`
 	}
 });
 
