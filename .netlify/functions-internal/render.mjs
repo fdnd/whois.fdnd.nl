@@ -3,10 +3,10 @@ import { init } from '../serverless.js';
 export const handler = init({
 	appDir: "_app",
 	appPath: "_app",
-	assets: new Set([".DS_Store","avatar.jpg","favicon.png"]),
+	assets: new Set(["avatar.jpg","favicon.png"]),
 	mimeTypes: {".jpg":"image/jpeg",".png":"image/png"},
 	_: {
-		entry: {"file":"_app/immutable/start-3f0ad2d1.js","imports":["_app/immutable/start-3f0ad2d1.js","_app/immutable/chunks/index-38afccfd.js","_app/immutable/chunks/singletons-7a99e1c1.js"],"stylesheets":[],"fonts":[]},
+		entry: {"file":"_app/immutable/start-c76a4945.js","imports":["_app/immutable/start-c76a4945.js","_app/immutable/chunks/index-38afccfd.js","_app/immutable/chunks/singletons-7a99e1c1.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			() => import('../server/nodes/0.js'),
 			() => import('../server/nodes/1.js'),
@@ -17,7 +17,8 @@ export const handler = init({
 			() => import('../server/nodes/6.js'),
 			() => import('../server/nodes/7.js'),
 			() => import('../server/nodes/8.js'),
-			() => import('../server/nodes/9.js')
+			() => import('../server/nodes/9.js'),
+			() => import('../server/nodes/10.js')
 		],
 		routes: [
 			{
@@ -63,6 +64,20 @@ export const handler = init({
 				endpoint: () => import('../server/entries/endpoints/api/v1/squads/_server.js')
 			},
 			{
+				id: "/api/v1/squad",
+				pattern: /^\/api\/v1\/squad\/?$/,
+				params: [],
+				page: null,
+				endpoint: () => import('../server/entries/endpoints/api/v1/squad/_server.js')
+			},
+			{
+				id: "/api/v1/squad/[slug]",
+				pattern: /^\/api\/v1\/squad\/([^/]+?)\/?$/,
+				params: [{"name":"slug","optional":false,"rest":false,"chained":false}],
+				page: null,
+				endpoint: () => import('../server/entries/endpoints/api/v1/squad/_slug_/_server.js')
+			},
+			{
 				id: "/api/v1/tribes",
 				pattern: /^\/api\/v1\/tribes\/?$/,
 				params: [],
@@ -94,6 +109,13 @@ export const handler = init({
 				id: "/docs/squads",
 				pattern: /^\/docs\/squads\/?$/,
 				params: [],
+				page: { layouts: [0,2], errors: [1,,], leaf: 9 },
+				endpoint: null
+			},
+			{
+				id: "/docs/squad",
+				pattern: /^\/docs\/squad\/?$/,
+				params: [],
 				page: { layouts: [0,2], errors: [1,,], leaf: 8 },
 				endpoint: null
 			},
@@ -101,7 +123,7 @@ export const handler = init({
 				id: "/docs/tribes",
 				pattern: /^\/docs\/tribes\/?$/,
 				params: [],
-				page: { layouts: [0,2], errors: [1,,], leaf: 9 },
+				page: { layouts: [0,2], errors: [1,,], leaf: 10 },
 				endpoint: null
 			}
 		],

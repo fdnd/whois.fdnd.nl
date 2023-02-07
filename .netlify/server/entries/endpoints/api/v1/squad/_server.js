@@ -16,25 +16,26 @@ const hygraph = new GraphQLClient(HYGRAPH_URL_HIGH_PERFORMANCE, {
 async function GET({ url }) {
   let id = url.searchParams.get("id") || "123";
   const query = gql`
-		query getMember($id: ID!) {
-			member(where: { id: $id }) {
+		query getSquad($id: ID!) {
+			squad(where: { id: $id }) {
 				id
-				slug
 				name
-				prefix
-				surname
-				role
-				nickname
-				avatar
-				gitHubHandle
-				bio {
-					html
-				}
+				slug
+				cohort
 				website
-				squads {
-					name
+				members(first: 100) {
+					id
 					slug
-					cohort
+					name
+					prefix
+					surname
+					role
+					nickname
+					avatar
+					gitHubHandle
+					bio {
+						html
+					}
 					website
 				}
 			}

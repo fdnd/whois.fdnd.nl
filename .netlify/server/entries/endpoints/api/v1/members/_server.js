@@ -1,13 +1,19 @@
 import { GraphQLClient, gql } from "graphql-request";
-import { H as HYGRAPH_URL, a as HYGRAPH_KEY } from "../../../../../chunks/private.js";
+import { H as HYGRAPH_URL_HIGH_PERFORMANCE, a as HYGRAPH_KEY } from "../../../../../chunks/private.js";
 const responseInit = {
   headers: {
     "content-type": "application/json",
-    "cache-control": "public, max-age=3600"
+    "cache-control": "public, max-age=0",
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+    "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
   }
 };
-const hygraph = new GraphQLClient(HYGRAPH_URL, {
-  headers: { Authorization: `Bearer ${HYGRAPH_KEY}` }
+const hygraph = new GraphQLClient(HYGRAPH_URL_HIGH_PERFORMANCE, {
+  headers: {
+    Authorization: `Bearer ${HYGRAPH_KEY}`
+  }
 });
 async function GET({ url }) {
   let first = Number(url.searchParams.get("first") ?? 10);

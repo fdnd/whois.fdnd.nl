@@ -41,6 +41,19 @@
       "_private.js"
     ]
   },
+  "src/routes/api/v1/squad/+server.js": {
+    "file": "entries/endpoints/api/v1/squad/_server.js",
+    "src": "src/routes/api/v1/squad/+server.js",
+    "isEntry": true,
+    "imports": [
+      "_private.js"
+    ]
+  },
+  "src/routes/api/v1/squad/[slug]/+server.js": {
+    "file": "entries/endpoints/api/v1/squad/_slug_/_server.js",
+    "src": "src/routes/api/v1/squad/[slug]/+server.js",
+    "isEntry": true
+  },
   "src/routes/api/v1/tribes/+server.js": {
     "file": "entries/endpoints/api/v1/tribes/_server.js",
     "src": "src/routes/api/v1/tribes/+server.js",
@@ -93,7 +106,7 @@
       "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-d1c7fcf5.css"
+      "_app/immutable/assets/_page-7e6698df.css"
     ]
   },
   "src/routes/admin/+page.server.js": {
@@ -132,6 +145,17 @@
     ],
     "css": [
       "_app/immutable/assets/_page-06982b44.css"
+    ]
+  },
+  "src/routes/docs/squad/+page.svelte": {
+    "file": "entries/pages/docs/squad/_page.svelte.js",
+    "src": "src/routes/docs/squad/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-7fe8bb6a.css"
     ]
   },
   "src/routes/docs/squads/+page.svelte": {

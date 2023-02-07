@@ -1,5 +1,5 @@
 import { GraphQLClient, gql } from 'graphql-request';
-import { HYGRAPH_KEY, HYGRAPH_URL_HIGH_PERFORMANCE } from '$env/static/private';
+import { HYGRAPH_KEY, HYGRAPH_URL, HYGRAPH_URL_HIGH_PERFORMANCE } from '$env/static/private';
 
 const responseInit = {
 	headers: {
@@ -13,7 +13,7 @@ const responseInit = {
 	}
 };
 
-const hygraph = new GraphQLClient(HYGRAPH_URL_HIGH_PERFORMANCE, {
+const hygraph = new GraphQLClient(HYGRAPH_URL, {
 	headers: { Authorization: `Bearer ${HYGRAPH_KEY}` }
 });
 
@@ -24,8 +24,9 @@ export async function GET({ url }) {
 	// let orderBy = (url.searchParams.get('orderBy') ?? 'publishedAt') + '_' + direction;
 
 	const query = gql`
-		query getSquads() {
+		query squadQuery() {
 			squads() {
+				id
 				name
 				slug
 				cohort

@@ -1,5 +1,5 @@
 import { GraphQLClient, gql } from "graphql-request";
-import { H as HYGRAPH_URL, a as HYGRAPH_KEY } from "../../../chunks/private.js";
+import { b as HYGRAPH_URL, a as HYGRAPH_KEY } from "../../../chunks/private.js";
 import { htmlToSlateAST } from "@graphcms/html-to-slate-ast";
 const actions = {
   default: async ({ request }) => {
