@@ -1,5 +1,5 @@
 import { GraphQLClient, gql } from 'graphql-request';
-import { HYGRAPH_KEY, HYGRAPH_URL } from '$env/static/private';
+import { HYGRAPH_KEY, HYGRAPH_URL_HIGH_PERFORMANCE } from '$env/static/private';
 
 import { page } from '$app/stores';
 
