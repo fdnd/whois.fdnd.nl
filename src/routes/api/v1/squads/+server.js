@@ -40,6 +40,7 @@ export async function GET({ url }) {
 			}
 		}
 	`;
+
 	const data = await hygraph.request(query /*, { first, skip, orderBy }*/);
 	return new Response(JSON.stringify(data), responseInit);
 }
