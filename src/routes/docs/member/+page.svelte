@@ -25,17 +25,20 @@
 	</li>
 </ul>
 
-<h3>PUT</h3>
-
-<p>work in progress</p>
-
-<h3>PATCH</h3>
-
-<p>work in progress</p>
-
 <h3>[slug]</h3>
 
-<p>work in progress</p>
+<p>
+	Selecteer één <em>member</em> in whois.fdnd.nl op basis van de ingestelde [slug] welke als onderdeel
+	van de url wordt meegestuurd.
+</p>
+
+<h4>Voorbeeld Request:</h4>
+
+<ul>
+	<li>
+		<a href="/api/v1/member/justus-sturkenboom">/api/v1/member/justus-sturkenboom</a>
+	</li>
+</ul>
 
 <style>
 	h3:not(:first-of-type),
