@@ -39,7 +39,13 @@
 
 <section>
 	<h2>Member aanpassen</h2>
-	<p>Het kan even duren voordat de aangepaste data in het CMS gepubliceerd wordt (~ 1 minuut)!</p>
+	<p>
+		Het kan eventjes (&lt; 1 minuut) duren voordat de door jou aangepaste data in
+		<a href="https://hygraph.com">Hygraph</a> (het CMS wat we gebruiken) gepubliceerd wordt ! Als je
+		precies wilt weten waarom dan kan je de
+		<a href="https://hygraph.com/docs/api-reference/basics/caching">details over caching</a> lezen.
+	</p>
+
 	<form method="post">
 		<label for="id">id:</label>
 		<input
@@ -130,13 +136,13 @@
 		background: var(--c-blue);
 		color: var(--c-green);
 		border-radius: var(--pilled);
-		transition:.25s
+		transition: 0.25s;
 	}
 	input[type='submit']:hover {
-		transform:scale(1.05)
+		transform: scale(1.05);
 	}
 	input[type='submit']:focus {
-		transform:scale(1.05);
+		transform: scale(1.05);
 		background: var(--c-green);
 		color: var(--c-blue);
 	}

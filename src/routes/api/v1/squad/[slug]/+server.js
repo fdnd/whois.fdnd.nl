@@ -7,17 +7,20 @@ const hygraph = new GraphQLClient(HYGRAPH_URL_HIGH_PERFORMANCE, {
 	headers: { Authorization: `Bearer ${HYGRAPH_KEY}` }
 });
 
-export async function GET({ params }) {
+export async function GET({ params, url }) {
 	const slug = params.slug;
+	let direction = url.searchParams.get('direction') === 'ASC' ? 'ASC' : 'DESC';
+	let orderBy = (url.searchParams.get('orderBy') ?? 'publishedAt') + '_' + direction;
+
 	const query = gql`
-		query getSquad($slug: String!) {
+		query getSquad($slug: String!, $orderBy: MemberOrderByInput) {
 			squad(where: { slug: $slug }) {
 				id
 				name
 				slug
 				cohort
 				website
-				members(first: 100) {
+				members(first: 100, orderBy: $orderBy) {
 					id
 					slug
 					name
@@ -35,6 +38,6 @@ export async function GET({ params }) {
 			}
 		}
 	`;
-	const data = await hygraph.request(query, { slug });
+	const data = await hygraph.request(query, { slug, orderBy });
 	return new Response(JSON.stringify(data), responseInit);
 }
