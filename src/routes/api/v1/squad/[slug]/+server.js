@@ -34,6 +34,7 @@ export async function GET({ params, url }) {
 						html
 					}
 					website
+					colour
 				}
 			}
 		}
