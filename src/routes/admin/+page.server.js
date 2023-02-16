@@ -15,10 +15,9 @@ export const actions = {
 		const nickname = fdata.get('nickname');
 		const avatar = fdata.get('avatar');
 		const gitHubHandle = fdata.get('gitHubHandle');
-
 		const bio = await htmlToSlateAST(fdata.get('bio'));
-
 		const website = fdata.get('website');
+		const colour = fdata.get('colour');
 
 		const hygraph = new GraphQLClient(HYGRAPH_URL, {
 			headers: { Authorization: `Bearer ${HYGRAPH_KEY}` }
@@ -36,6 +35,7 @@ export const actions = {
 				$gitHubHandle: String!
 				$bio: RichTextAST!
 				$website: String!
+				$colour: Hex!
 			) {
 				updateMember(
 					where: { id: $id }
@@ -49,6 +49,7 @@ export const actions = {
 						gitHubHandle: $gitHubHandle
 						bio: { children: $bio }
 						website: $website
+						colour: { hex: $colour }
 					}
 				) {
 					id
@@ -65,7 +66,8 @@ export const actions = {
 			avatar,
 			gitHubHandle,
 			bio,
-			website
+			website,
+			colour
 		});
 
 		// See publishing content: https://hygraph.com/docs/api-reference/content-api/content-stages

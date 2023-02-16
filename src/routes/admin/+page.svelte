@@ -11,6 +11,7 @@
 	let gitHubHandle;
 	let bio;
 	let website;
+	let colour;
 
 	function populate() {
 		// trigger loading animation
@@ -28,6 +29,7 @@
 						gitHubHandle = data.member.gitHubHandle;
 						website = data.member.website;
 						bio = data.member.bio.html;
+						colour = data.member.colour.hex;
 						// remove loading animation
 					} else {
 						// failed animation
@@ -86,6 +88,9 @@
 
 		<label for="website">website:</label>
 		<input type="text" name="website" id="website" bind:value={website} placeholder="..." />
+
+		<label for="colour">colour:</label>
+		<input type="color" name="colour" id="colour" bind:value={colour} placeholder="..." />
 
 		<label for="bio">bio:</label>
 		<textarea name="bio" id="bio" cols="30" rows="10" bind:value={bio} placeholder="..." />

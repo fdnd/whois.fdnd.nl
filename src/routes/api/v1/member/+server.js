@@ -26,7 +26,9 @@ export async function GET({ url }) {
 					html
 				}
 				website
-				colour
+				colour {
+					hex
+				}
 				squads {
 					name
 					slug
