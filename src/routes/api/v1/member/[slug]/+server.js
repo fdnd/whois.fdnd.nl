@@ -34,6 +34,11 @@ export async function GET({ params }) {
 					cohort
 					website
 				}
+				shouts {
+					id
+					author
+					text
+				}
 			}
 		}
 	`;

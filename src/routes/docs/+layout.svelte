@@ -13,6 +13,13 @@
 		Members: {
 			GET: '/docs/members#get'
 		},
+		Shout: {
+			// GET: '/docs/shout#get',
+			POST: '/docs/shout#post'
+			// PUT: '/docs/shout#put',
+			// PATCH: '/docs/shout#patch',
+			// DELETE: '/docs/shout#delete'
+		},
 		Squad: {
 			GET: '/docs/squad#get',
 			'[slug]': '/docs/squad#slug'
