@@ -37,6 +37,10 @@ export async function GET({ params, url }) {
 					colour {
 						hex
 					}
+					shouts(last: 5) {
+						text
+						author
+					}
 				}
 			}
 		}
