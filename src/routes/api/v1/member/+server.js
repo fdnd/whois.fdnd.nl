@@ -51,7 +51,7 @@ export async function GET({ url }) {
 export async function POST({ request }) {
 	const formdata = await request.json();
 	// Voor rich text velden moet de ruwe data omgerekend worden
-	formdata.bio = await htmlToSlateAST(fdata.bio);
+	formdata.bio = await htmlToSlateAST(formdata.bio);
 
 	const mutation = gql`
 		mutation createMember(
