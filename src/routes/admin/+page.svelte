@@ -1,35 +1,39 @@
 <script>
-	import { page } from '$app/stores';
+	import { env } from '$env/dynamic/public';
+	const directus = env.PUBLIC_DIRECTUS_URL;
 
 	let id;
-	let slug;
 	let name;
 	let prefix;
 	let surname;
 	let nickname;
-	let avatar;
-	let gitHubHandle;
-	let bio;
+	let github_handle;
 	let website;
-	let colour;
+	let bio;
+	let avatar;
+	let email;
+	let phone_number;
+	let squad_id;
+	let custom;
 
 	function populate() {
+		console.log('typed!');
 		// trigger loading animation
 		if (id != 'null') {
-			fetch(`${$page.url.origin}/api/v1/member?id=${id}`)
+			fetch(`${directus}/person/${id}`)
 				.then(res => res.json())
 				.then(data => {
-					if (data.member !== null) {
-						slug = data.member.slug;
-						name = data.member.name;
-						prefix = data.member.prefix;
-						surname = data.member.surname;
-						nickname = data.member.nickname;
-						avatar = data.member.avatar;
-						gitHubHandle = data.member.gitHubHandle;
-						website = data.member.website;
-						bio = data.member.bio.html;
-						colour = data.member.colour.hex;
+					console.log(data);
+					if (data !== null) {
+						name = data.name;
+						prefix = data.prefix;
+						surname = data.surname;
+						nickname = data.nickname;
+						github_handle = data.github_handle;
+						website = data.website;
+						bio = data.bio.html;
+						avatar = data.avatar;
+
 						// remove loading animation
 					} else {
 						// failed animation
@@ -40,13 +44,7 @@
 </script>
 
 <section>
-	<h2>Member aanpassen</h2>
-	<p>
-		Het kan eventjes (&lt; 1 minuut) duren voordat de door jou aangepaste data in
-		<a href="https://hygraph.com">Hygraph</a> (het CMS wat we gebruiken) gepubliceerd wordt ! Als je
-		precies wilt weten waarom dan kan je de
-		<a href="https://hygraph.com/docs/api-reference/basics/caching">details over caching</a> lezen.
-	</p>
+	<h2>person aanpassen</h2>
 
 	<form method="post">
 		<label for="id">id:</label>
@@ -56,11 +54,8 @@
 			id="id"
 			bind:value={id}
 			on:change={populate}
-			placeholder="Paste je id"
+			placeholder="Type je id..."
 		/>
-
-		<label for="slug">slug:</label>
-		<input type="text" name="slug" id="slug" bind:value={slug} placeholder="..." />
 
 		<label for="name">name:</label>
 		<input type="text" name="name" id="name" bind:value={name} placeholder="..." />
@@ -74,26 +69,42 @@
 		<label for="nickname">nickname:</label>
 		<input type="text" name="nickname" id="nickname" bind:value={nickname} placeholder="..." />
 
-		<label for="avatar">avatar:</label>
-		<input type="text" name="avatar" id="avatar" bind:value={avatar} placeholder="..." />
-
-		<label for="gitHubHandle">gitHubHandle:</label>
+		<label for="gitHubHandle">github_handle:</label>
 		<input
 			type="text"
-			name="gitHubHandle"
-			id="gitHubHandle"
-			bind:value={gitHubHandle}
+			name="github_handle"
+			id="github_handle"
+			bind:value={github_handle}
 			placeholder="..."
 		/>
 
 		<label for="website">website:</label>
 		<input type="text" name="website" id="website" bind:value={website} placeholder="..." />
 
-		<label for="colour">colour:</label>
-		<input type="color" name="colour" id="colour" bind:value={colour} placeholder="..." />
-
 		<label for="bio">bio:</label>
 		<textarea name="bio" id="bio" cols="30" rows="10" bind:value={bio} placeholder="..." />
+
+		<label for="avatar">avatar:</label>
+		<input type="text" name="avatar" id="avatar" bind:value={avatar} placeholder="..." />
+
+		<label for="email">email:</label>
+		<input type="text" name="email" id="email" bind:value={email} placeholder="..." />
+
+		<label for="phone_number">phone_number:</label>
+		<input
+			type="text"
+			name="phone_number"
+			id="phone_number"
+			bind:value={phone_number}
+			placeholder="..."
+		/>
+
+		<label for="squad_id">squad_id:</label>
+		<input type="text" name="squad_id" id="squad_id" bind:value={squad_id} placeholder="..." />
+
+		<label for="custom">custom:</label>
+		<textarea name="custom" id="custom" cols="30" rows="10" bind:value={custom} placeholder="..." />
+
 		<input type="submit" value="Opslaan" />
 	</form>
 </section>
@@ -112,7 +123,7 @@
 		display: block;
 		font-size: 1.6rem;
 	}
-	select,
+	/* select, */
 	textarea,
 	input[type='text'],
 	input[type='submit'] {

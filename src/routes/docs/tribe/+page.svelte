@@ -3,17 +3,17 @@
 	const directus = env.PUBLIC_DIRECTUS_URL;
 </script>
 
-<h2>squad</h2>
+<h2>tribe</h2>
 
 <h3>GET</h3>
 
-<p>Selecteer alle <em>squads</em> in het systeem.</p>
+<p>Selecteer alle <em>tribes</em> in het systeem.</p>
 
 <h4>Voorbeeld Request:</h4>
 
 <ul>
 	<li>
-		<a href="{directus}/squad/">{directus}/squad/</a>
+		<a href="{directus}/tribe/">{directus}/tribe/</a>
 	</li>
 </ul>
 
