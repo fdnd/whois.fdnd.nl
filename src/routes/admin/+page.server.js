@@ -1,3 +1,6 @@
+import { env } from '$env/dynamic/public';
+const directus = env.PUBLIC_DIRECTUS_URL;
+
 // See form actions: https://kit.svelte.dev/docs/form-actions
 export const actions = {
 	default: async ({ request }) => {
@@ -16,9 +19,29 @@ export const actions = {
 		const squad_id = fdata.get('squad_id');
 		const custom = fdata.get('custom');
 
-		// Stuur een update naar directus..
-		log('update directus');
+		const body = JSON.stringify({
+			name,
+			prefix,
+			surname,
+			nickname,
+			github_handle,
+			website,
+			bio,
+			avatar,
+			email,
+			phone_number,
+			squad_id,
+			custom: JSON.stringify(custom)
+		});
 
-		return false;
+		const { data } = await fetch(`${directus}/person/${id}`, {
+			method: 'PATCH',
+			body: body,
+			headers: { 'Content-type': 'application/json; charset=UTF-8' }
+		})
+			.then(response => response.json())
+			.catch(error => error);
+
+		return data;
 	}
 };

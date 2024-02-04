@@ -1,29 +1,31 @@
 <script>
 	import { env } from '$env/dynamic/public';
+	import { null_to_empty } from 'svelte/internal';
 	const directus = env.PUBLIC_DIRECTUS_URL;
+	export let form;
 
-	let id;
-	let name;
-	let prefix;
-	let surname;
-	let nickname;
-	let github_handle;
-	let website;
-	let bio;
-	let avatar;
-	let email;
-	let phone_number;
-	let squad_id;
-	let custom;
+	console.log(form);
+
+	let id = form?.id || null;
+	let name = form?.name || null;
+	let prefix = form?.prefix || null;
+	let surname = form?.surname || null;
+	let nickname = form?.nickname || null;
+	let github_handle = form?.github_handle || null;
+	let website = form?.website || null;
+	let bio = form?.bio || null;
+	let avatar = form?.avatar || null;
+	let email = form?.email || null;
+	let phone_number = form?.phone_number || null;
+	let squad_id = form?.squad_id || null;
+	let custom = form?.custom || null;
 
 	function populate() {
-		console.log('typed!');
 		// trigger loading animation
 		if (id != 'null') {
 			fetch(`${directus}/person/${id}`)
 				.then(res => res.json())
-				.then(data => {
-					console.log(data);
+				.then(({ data }) => {
 					if (data !== null) {
 						name = data.name;
 						prefix = data.prefix;
@@ -31,9 +33,12 @@
 						nickname = data.nickname;
 						github_handle = data.github_handle;
 						website = data.website;
-						bio = data.bio.html;
+						bio = data.bio;
 						avatar = data.avatar;
-
+						email = data.email;
+						phone_number = data.phone_number;
+						squad_id = data.squad_id;
+						custom = data.custom;
 						// remove loading animation
 					} else {
 						// failed animation
@@ -46,6 +51,13 @@
 <section>
 	<h2>person aanpassen</h2>
 
+	<p>
+		Begin met het invoeren van het id om jouw gegevens in te laden. Druk op opslaan of druk op enter
+		in een van de textvelden om op te slaan. Als jouw gegevens na de reload blijven staan is het
+		opslaan gelukt. Als het formulier geleegd wordt heb je ergens verkeerde gegevens ingevuld, begin
+		bij je id om het opnieuw te proberen.
+	</p>
+
 	<form method="post">
 		<label for="id">id:</label>
 		<input
@@ -54,7 +66,7 @@
 			id="id"
 			bind:value={id}
 			on:change={populate}
-			placeholder="Type je id..."
+			placeholder="Type je id"
 		/>
 
 		<label for="name">name:</label>
@@ -78,7 +90,7 @@
 			placeholder="..."
 		/>
 
-		<label for="website">website:</label>
+		<label for="website">website (geldige url):</label>
 		<input type="text" name="website" id="website" bind:value={website} placeholder="..." />
 
 		<label for="bio">bio:</label>
@@ -99,10 +111,10 @@
 			placeholder="..."
 		/>
 
-		<label for="squad_id">squad_id:</label>
+		<label for="squad_id">squad_id (getal, 0 voor leeg):</label>
 		<input type="text" name="squad_id" id="squad_id" bind:value={squad_id} placeholder="..." />
 
-		<label for="custom">custom:</label>
+		<label for="custom">custom (geldige json):</label>
 		<textarea name="custom" id="custom" cols="30" rows="10" bind:value={custom} placeholder="..." />
 
 		<input type="submit" value="Opslaan" />
