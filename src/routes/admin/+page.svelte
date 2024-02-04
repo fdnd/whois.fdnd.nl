@@ -4,8 +4,6 @@
 	const directus = env.PUBLIC_DIRECTUS_URL;
 	export let form;
 
-	console.log(form);
-
 	let id = form?.id || null;
 	let name = form?.name || null;
 	let prefix = form?.prefix || null;

@@ -16,7 +16,7 @@ export const actions = {
 		const avatar = fdata.get('avatar');
 		const email = fdata.get('email');
 		const phone_number = fdata.get('phone_number');
-		const squad_id = fdata.get('squad_id');
+		const squad_id = Number(fdata.get('squad_id'));
 		const custom = fdata.get('custom');
 
 		const body = JSON.stringify({
@@ -31,7 +31,7 @@ export const actions = {
 			email,
 			phone_number,
 			squad_id,
-			custom: JSON.stringify(custom)
+			custom
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {
@@ -41,7 +41,6 @@ export const actions = {
 		})
 			.then(response => response.json())
 			.catch(error => error);
-
 		return data;
 	}
 };
