@@ -15,7 +15,5 @@
 		<Nav data={nav} />
 
 		<slot />
-
-		<Footer />
 	</Wrapper>
 </Branding>
