@@ -47,11 +47,11 @@
 
 <pre>
 const request = &#123;
-  "method": "PATCH",
-  "body": &#123;
-    "nickname": "flappie"
-  },
-  "Content-type": "application/json; charset=UTF-8"
+  method: "PATCH",
+  body: '&#123;"nickname":"flappie"}',
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8'
+  }
 }
 const &#123; data } = await fetch(`$&#123;directus}/person/1`, request)
   .then((response) => response.json())
