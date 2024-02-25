@@ -47,7 +47,7 @@
 
 <pre>
 const request = &#123;
-  method: "PATCH",
+  method: 'PATCH',
   body: '&#123;"nickname":"flappie"}',
   headers: {
     'Content-type': 'application/json; charset=UTF-8'
