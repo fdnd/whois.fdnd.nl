@@ -5,7 +5,7 @@
 
 <h2>person</h2>
 
-<h3>GET</h3>
+<h3 id="get">GET</h3>
 
 <p>Selecteer alle <em>persons</em> in het systeem.</p>
 
@@ -13,11 +13,11 @@
 
 <ul>
 	<li>
-		<a href="{directus}/person/">{directus}/person/</a>
+		<a href="{directus}/person">{directus}/person</a>
 	</li>
 </ul>
 
-<h3>[id]</h3>
+<h3 id="id">[id]</h3>
 
 <p>Selecteer een <em>person</em> aan de hand van een specifiek meegestuurd id</p>
 
@@ -25,11 +25,11 @@
 
 <ul>
 	<li>
-		<a href="{directus}/person/1">{directus}/person/1</a>
+		<a href="{directus}/person/234">{directus}/person/234</a>
 	</li>
 </ul>
 
-<h3>PATCH</h3>
+<h3 id="patch">PATCH</h3>
 
 <p>
 	Pas de gegevens van een <em>person</em> aan aan de hand van een specifiek meegestuurd id. Om een
@@ -53,7 +53,7 @@ const request = &#123;
     'Content-type': 'application/json; charset=UTF-8'
   }
 }
-const &#123; data } = await fetch(`$&#123;directus}/person/1`, request)
+const &#123; data } = await fetch(`$&#123;directus}/person/234`, request)
   .then((response) => response.json())
   .catch((error) => error)
 </pre>

@@ -12,7 +12,6 @@
 		},
 		squad: {
 			GET: '/docs/squad#get',
-			'[id]': '/docs/squad#id'
 			// 	POST: '/docs/shout#post'
 			// 	PUT: '/docs/shout#put',
 			// 	PATCH: '/docs/shout#patch',

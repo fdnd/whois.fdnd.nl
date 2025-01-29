@@ -5,7 +5,7 @@
 
 <h2>tribe</h2>
 
-<h3>GET</h3>
+<h3 id="get">GET</h3>
 
 <p>Selecteer alle <em>tribes</em> in het systeem.</p>
 
@@ -13,7 +13,7 @@
 
 <ul>
 	<li>
-		<a href="{directus}/tribe/">{directus}/tribe/</a>
+		<a href="{directus}/tribe">{directus}/tribe</a>
 	</li>
 </ul>
 

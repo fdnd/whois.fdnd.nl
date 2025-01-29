@@ -5,7 +5,7 @@
 
 <h2>squad</h2>
 
-<h3>GET</h3>
+<h3 id="get">GET</h3>
 
 <p>Selecteer alle <em>squads</em> in het systeem.</p>
 
@@ -13,7 +13,7 @@
 
 <ul>
 	<li>
-		<a href="{directus}/squad/">{directus}/squad/</a>
+		<a href="{directus}/squad">{directus}/squad</a>
 	</li>
 </ul>
 
