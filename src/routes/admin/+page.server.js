@@ -8,7 +8,7 @@ export const actions = {
 		const id = fdata.get('id');
 
 		const nickname = fdata.get('nickname');
-		const github_handle = fdata.get('github_handle');
+		const github_handle = fdata.get('github_handle').replace('https://github.com/', '');
 		const website = fdata.get('website');
 		const bio = fdata.get('bio');
 		const avatar = fdata.get('avatar');
