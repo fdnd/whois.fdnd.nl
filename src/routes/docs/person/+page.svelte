@@ -40,7 +40,7 @@
 	voor dit request wilt gebruiken.
 </p>
 <p>
-	Hieronder zie je een voorbeeld waarbij voor de <em>person</em> met het id 1 de nickname
+	Hieronder zie je een voorbeeld waarbij voor de <em>person</em> met het id 234 de nickname
 	<em>flappie</em>
 	wordt ingesteld.
 </p>
@@ -49,7 +49,7 @@
 const request = &#123;
   method: 'PATCH',
   body: '&#123;"nickname":"flappie"}',
-  headers: {
+  headers: &#123;
     'Content-type': 'application/json; charset=UTF-8'
   }
 }
