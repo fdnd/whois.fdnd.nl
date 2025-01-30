@@ -44,9 +44,11 @@
 <section>
 	<h2>Gegevens van persoon aanpassen</h2>
 
-	<p>Begin met het invoeren van jouw <code>id</code> om jouw gegevens in te laden.</p>
+	<p>Begin met het invoeren van <em>jouw</em> <code>id</code> om <em>jouw</em> gegevens in te laden.</p>
 	
 	<p>Pas daarna je gegevens aan in het formulier eronder.</p>
+
+	<p><small>Ja, je kunt in dit geval van iedereen de gegevens aanpassen, maar dat is dus <em>niet</em> de bedoeling :)</small></p>
 
 	<form method="get" on:submit={populate}>
 		<label for="id">id:</label>
