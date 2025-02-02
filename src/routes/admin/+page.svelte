@@ -155,7 +155,8 @@
 	input[type='date']:focus,
 	input[type='text']:focus {
 		outline: none !important;
-		box-shadow: 0 0 10px var(--c-blue);
+		border-color: var(--c-blue);
+		background: #fff;
 	}
 	input[type='text'],
 	input[type='url'] {
@@ -166,10 +167,11 @@
 		background: var(--c-blue);
 		color: var(--c-green);
 		border-radius: var(--pilled);
-		transition: 0.25s;
+		transition: 0.15s;
 		width: auto;
+		cursor: pointer;
 	}
-	input[type='submit']:focus {
+	input[type='submit']:focus, input[type='submit']:hover {
 		background: var(--c-green);
 		color: var(--c-blue);
 	}
