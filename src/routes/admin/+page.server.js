@@ -12,7 +12,10 @@ export const actions = {
 		const website = fdata.get('website');
 		const bio = fdata.get('bio');
 		const avatar = fdata.get('avatar');
-		const birthdate = fdata.get('birthdate');
+		let birthdate = fdata.get('birthdate');
+		if (birthdate == '') {
+			birthdate = null;
+		}
 		const custom = fdata.get('custom').trim();
 
 		const body = JSON.stringify({
