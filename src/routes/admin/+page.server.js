@@ -23,6 +23,7 @@ export const actions = {
 		const fav_tag = fdata.get('fav_tag').trim();
 		const fav_attribute = fdata.get('fav_attribute').trim();
 		const fav_property = fdata.get('fav_property').trim();
+		const fav_feature = fdata.get('fav_feature').trim();
 		const custom = fdata.get('custom').trim();
 
 		const body = JSON.stringify({
@@ -37,6 +38,7 @@ export const actions = {
 			fav_tag,
 			fav_attribute,
 			fav_property,
+			fav_feature,
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {

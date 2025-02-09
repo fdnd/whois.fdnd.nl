@@ -21,6 +21,7 @@
 	let fav_property = form?.fav_property || null;
 	let fav_tag = form?.fav_tag || null;
 	let fav_attribute = form?.fav_attribute || null;
+	let fav_feature = form?.fav_feature || null;
 
 	function populate() {
 		hidden = true;
@@ -43,6 +44,7 @@
 						fav_property = data.fav_property;
 						fav_tag = data.fav_tag;
 						fav_attribute = data.fav_attribute;
+						fav_feature = data.fav_feature;
 					}
 				});
 		}
@@ -1064,6 +1066,149 @@
 				<option>writing-mode</option>
 				<option>z-index</option>
 				<option>zoom</option>
+			</datalist>
+
+			<label for="fav_feature">Favoriete JS feature:</label>
+			<input type="text" name="fav_feature" id="fav_feature" bind:value={fav_feature} placeholder="" list="features">
+			<datalist id="features">
+				<option>Attribution Reporting</option>
+				<option>Audio Output Devices</option>
+				<option>Background Fetch</option>
+				<option>Background Synchronization</option>
+				<option>Background Tasks</option>
+				<option>Badging</option>
+				<option>Barcode Detection</option>
+				<option>Battery Status</option>
+				<option>Beacon</option>
+				<option>Web Bluetooth</option>
+				<option>Broadcast Channel</option>
+				<option>CSS Custom Highlight</option>
+				<option>CSS Font Loading</option>
+				<option>CSS Painting</option>
+				<option>CSS Properties and Values</option>
+				<option>CSS Typed Object Model</option>
+				<option>CSS Object Model (CSSOM)</option>
+				<option>Canvas</option>
+				<option>Channel Messaging</option>
+				<option>Clipboard</option>
+				<option>Compression Streams</option>
+				<option>Compute Pressure</option>
+				<option>Console</option>
+				<option>Contact Picker</option>
+				<option>Content Index</option>
+				<option>Cookie Store</option>
+				<option>Credential Management</option>
+				<option>Document Object Model (DOM)</option>
+				<option>Device Memory</option>
+				<option>Device orientation events</option>
+				<option>Device Posture</option>
+				<option>Document Picture-in-Picture</option>
+				<option>EditContext</option>
+				<option>Encoding</option>
+				<option>Encrypted Media Extensions</option>
+				<option>EyeDropper</option>
+				<option>Federated Credential Management (FedCM)</option>
+				<option>Fenced Frame</option>
+				<option>Fetch</option>
+				<option>File</option>
+				<option>File System</option>
+				<option>File and Directory Entries</option>
+				<option>Force Touch events Non-standard</option>
+				<option>Fullscreen</option>
+				<option>Gamepad</option>
+				<option>Geolocation</option>
+				<option>Geometry interfaces</option>
+				<option>The HTML DOM</option>
+				<option>HTML Drag and Drop</option>
+				<option>History</option>
+				<option>Houdinis</option>
+				<option>Idle Detection</option>
+				<option>MediaStream Image Capture</option>
+				<option>IndexedDB</option>
+				<option>Ink</option>
+				<option>InputDeviceCapabilities</option>
+				<option>Insertable Streams for MediaStreamTrack</option>
+				<option>Intersection Observer</option>
+				<option>Invoker Commands</option>
+				<option>Keyboard</option>
+				<option>Launch Handler</option>
+				<option>Local Font Access</option>
+				<option>Media Capabilities</option>
+				<option>Media Capture and Streams (Media Stream)</option>
+				<option>Media Session</option>
+				<option>Media Source</option>
+				<option>MediaStream Recording</option>
+				<option>Navigation</option>
+				<option>Network Information</option>
+				<option>Page Visibility</option>
+				<option>Payment Handler</option>
+				<option>Payment Request</option>
+				<option>Performances</option>
+				<option>Web Periodic Background Synchronization</option>
+				<option>Permissions</option>
+				<option>Picture-in-Picture</option>
+				<option>Pointer events</option>
+				<option>Pointer Lock</option>
+				<option>Popover</option>
+				<option>Presentation</option>
+				<option>Prioritized Task Scheduling</option>
+				<option>Push</option>
+				<option>Remote Playback</option>
+				<option>Reporting</option>
+				<option>Resize Observer</option>
+				<option>SVG</option>
+				<option>Screen Capture</option>
+				<option>Screen Orientation</option>
+				<option>Screen Wake Lock</option>
+				<option>Selection</option>
+				<option>Sensors</option>
+				<option>Server-sent events</option>
+				<option>Service Worker</option>
+				<option>Shared Storage</option>
+				<option>Speculation Rules</option>
+				<option>Storage</option>
+				<option>Storage Access</option>
+				<option>Streams</option>
+				<option>Topics Non-standard</option>
+				<option>Touch events</option>
+				<option>Trusted Types</option>
+				<option>UI Events</option>
+				<option>URL</option>
+				<option>URL Fragment Text Directives</option>
+				<option>URL Pattern</option>
+				<option>User-Agent Client Hints</option>
+				<option>Vibration</option>
+				<option>View Transition</option>
+				<option>VirtualKeyboard</option>
+				<option>Visual Viewport</option>
+				<option>Web Animations</option>
+				<option>Web Audio</option>
+				<option>Web Authentication</option>
+				<option>Web Components</option>
+				<option>Web Crypto</option>
+				<option>Web Locks</option>
+				<option>Web MIDI</option>
+				<option>Web NFC</option>
+				<option>Notifications</option>
+				<option>Web Serial</option>
+				<option>Web Share</option>
+				<option>Web Speech</option>
+				<option>Web Storage</option>
+				<option>Web Workers</option>
+				<option>WebCodecs</option>
+				<option>WebGL</option>
+				<option>WebGPU</option>
+				<option>WebHID</option>
+				<option>WebOTP</option>
+				<option>WebRTC</option>
+				<option>WebSockets</option>
+				<option>WebTransport</option>
+				<option>WebUSB</option>
+				<option>WebVTT</option>
+				<option>WebXR Device</option>
+				<option>Window Controls Overlay</option>
+				<option>Window Management</option>
+				<option>XMLHttpRequest</option>
 			</datalist>
 
 
