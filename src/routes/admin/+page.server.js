@@ -7,15 +7,22 @@ export const actions = {
 		const fdata = await request.formData();
 		const id = fdata.get('id');
 
-		const nickname = fdata.get('nickname');
-		const github_handle = fdata.get('github_handle').replace('https://github.com/', '');
-		const website = fdata.get('website');
-		const bio = fdata.get('bio');
-		const avatar = fdata.get('avatar');
-		let birthdate = fdata.get('birthdate');
+		const nickname = fdata.get('nickname').trim();
+		const github_handle = fdata.get('github_handle').replace('https://github.com/', '').trim();
+		const website = fdata.get('website').trim();
+		const bio = fdata.get('bio').trim();
+		const avatar = fdata.get('avatar').trim();
+		let birthdate = fdata.get('birthdate').trim();
 		if (birthdate == '') {
 			birthdate = null;
 		}
+		let fav_color = fdata.get('fav_color');
+		if (fav_color == '') {
+			fav_color = null;
+		}
+		const fav_tag = fdata.get('fav_tag').trim();
+		const fav_attribute = fdata.get('fav_attribute').trim();
+		const fav_property = fdata.get('fav_property').trim();
 		const custom = fdata.get('custom').trim();
 
 		const body = JSON.stringify({
@@ -25,7 +32,11 @@ export const actions = {
 			bio,
 			avatar,
 			birthdate,
-			custom
+			custom,
+			fav_color,
+			fav_tag,
+			fav_attribute,
+			fav_property,
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {
