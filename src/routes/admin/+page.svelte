@@ -22,6 +22,7 @@
 	let fav_tag = form?.fav_tag || null;
 	let fav_attribute = form?.fav_attribute || null;
 	let fav_feature = form?.fav_feature || null;
+	let fav_kitchen = form?.fav_kitchen || null;
 
 	function populate() {
 		hidden = true;
@@ -45,6 +46,7 @@
 						fav_tag = data.fav_tag;
 						fav_attribute = data.fav_attribute;
 						fav_feature = data.fav_feature;
+						fav_kitchen = data.fav_kitchen;
 					}
 				});
 		}
@@ -1212,6 +1214,36 @@
 			</datalist>
 
 
+			<label for="fav_kitchen">Favoriete keuken:</label>
+			<select name="fav_kitchen" id="fav_kitchen" bind:value={fav_kitchen}>
+				<option></option>
+				<option>Abgoosht</option>
+				<option>AVG'tje</option>
+				<option>Bami</option>
+				<option>Barbeque</option>
+				<option>Burrito's</option>
+				<option>Couscous</option>
+				<option>Erwtensoep</option>
+				<option>Hamburger</option>
+				<option>Indische rijsttafel</option>
+				<option>Kippensoep</option>
+				<option>Köfte</option>
+				<option>Lasagne</option>
+				<option>Nasi</option>
+				<option>Pannenkoeken</option>
+				<option>Pasta</option>
+				<option>Patat</option>
+				<option>Pizza</option>
+				<option>Quiche</option>
+				<option>Shoarma</option>
+				<option>Souvlaki</option>
+				<option>Sushi</option>
+				<option>Taco's</option>
+				<option>Tomatensoep</option>
+				<option>Tonijn</option>
+				<option>Zalm</option>
+			</select>
+
 		</fieldset>
 
 		<input type="submit" value="Opslaan">
@@ -1262,7 +1294,8 @@
 	input[type='number'],
 	input[type='url'],
 	input[type='date'],
-	input[type='submit'] {
+	input[type='submit'],
+	select {
 		font-family: monospace;
 		padding: var(--component-padding);
 		font-size: 1.4rem;
@@ -1274,7 +1307,8 @@
 	textarea,
 	input[type='text'],
 	input[type='number'],
-	input[type='url'] {
+	input[type='url'],
+	select {
 		width: 100%;
 	}
 	input[type='number'] {
@@ -1290,7 +1324,8 @@
 	textarea:focus,
 	input[type='url']:focus,
 	input[type='date']:focus,
-	input[type='text']:focus {
+	input[type='text']:focus,
+	select:focus {
 		outline: none !important;
 		border-color: var(--c-blue);
 		background: #fff;
