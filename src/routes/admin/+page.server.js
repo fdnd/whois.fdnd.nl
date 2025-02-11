@@ -7,12 +7,12 @@ export const actions = {
 		const fdata = await request.formData();
 		const id = fdata.get('id');
 
-		const nickname = fdata.get('nickname').trim();
+		const nickname = fdata.get('nickname')?.trim();
 		const github_handle = fdata.get('github_handle').replace('https://github.com/', '').trim();
-		const website = fdata.get('website').trim();
-		const bio = fdata.get('bio').trim();
-		const avatar = fdata.get('avatar').trim();
-		let birthdate = fdata.get('birthdate').trim();
+		const website = fdata.get('website')?.trim();
+		const bio = fdata.get('bio')?.trim();
+		const avatar = fdata.get('avatar')?.trim();
+		let birthdate = fdata.get('birthdate')?.trim();
 		if (birthdate == '') {
 			birthdate = null;
 		}
@@ -20,13 +20,13 @@ export const actions = {
 		if (fav_color == '') {
 			fav_color = null;
 		}
-		const fav_tag = fdata.get('fav_tag').trim();
-		const fav_attribute = fdata.get('fav_attribute').trim();
-		const fav_property = fdata.get('fav_property').trim();
-		const fav_feature = fdata.get('fav_feature').trim();
-		const fav_kitchen = fdata.get('fav_kitchen').trim();
-		const fav_book_genre = fdata.get('fav_book_genre').trim();
-		const custom = fdata.get('custom').trim();
+		const fav_tag = fdata.get('fav_tag')?.trim();
+		const fav_attribute = fdata.get('fav_attribute')?.trim();
+		const fav_property = fdata.get('fav_property')?.trim();
+		const fav_feature = fdata.get('fav_feature')?.trim();
+		const fav_kitchen = fdata.get('fav_kitchen')?.trim();
+		const fav_book_genre = fdata.get('fav_book_genre')?.trim();
+		const custom = fdata.get('custom')?.trim();
 
 		const body = JSON.stringify({
 			nickname,
