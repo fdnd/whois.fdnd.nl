@@ -1214,7 +1214,7 @@
 			</datalist>
 
 
-			<label for="fav_kitchen">Favoriete keuken:</label>
+			<label for="fav_kitchen">Favoriete gerecht:</label>
 			<select name="fav_kitchen" id="fav_kitchen" bind:value={fav_kitchen}>
 				<option></option>
 				<option>Abgoosht</option>
