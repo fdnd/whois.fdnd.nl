@@ -26,6 +26,7 @@ export const actions = {
 		const fav_feature = fdata.get('fav_feature')?.trim();
 		const fav_kitchen = fdata.get('fav_kitchen')?.trim();
 		const fav_book_genre = fdata.get('fav_book_genre')?.trim();
+		const fav_country = fdata.get('fav_country')?.trim();
 		const custom = fdata.get('custom')?.trim();
 
 		const body = JSON.stringify({
@@ -43,6 +44,7 @@ export const actions = {
 			fav_feature,
 			fav_kitchen,
 			fav_book_genre,
+			fav_country,
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {
