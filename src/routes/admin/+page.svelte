@@ -1437,6 +1437,7 @@
 				<option value="ZMB">Zambia</option>
 				<option value="ZWE">Zimbabwe</option>
 			</select>
+			<small>Voor gebruik met bijvoorbeeld <a href="https://datamaps.github.io/">DataMaps</a></small>
 
 		</fieldset>
 
