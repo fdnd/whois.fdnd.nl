@@ -23,6 +23,7 @@
 	let fav_attribute = form?.fav_attribute || null;
 	let fav_feature = form?.fav_feature || null;
 	let fav_kitchen = form?.fav_kitchen || null;
+	let fav_book_genre = form?.fav_book_genre || null;
 
 	function populate() {
 		hidden = true;
@@ -47,6 +48,7 @@
 						fav_attribute = data.fav_attribute;
 						fav_feature = data.fav_feature;
 						fav_kitchen = data.fav_kitchen;
+						fav_book_genre = data.fav_book_genre;
 					}
 				});
 		}
@@ -1213,7 +1215,6 @@
 				<option>XMLHttpRequest</option>
 			</datalist>
 
-
 			<label for="fav_kitchen">Favoriete gerecht:</label>
 			<select name="fav_kitchen" id="fav_kitchen" bind:value={fav_kitchen}>
 				<option></option>
@@ -1242,6 +1243,15 @@
 				<option>Tomatensoep</option>
 				<option>Tonijn</option>
 				<option>Zalm</option>
+			</select>
+
+			<label for="fav_book_genre">Favoriete boekengenre:</label>
+			<select name="fav_book_genre" id="fav_book_genre" bind:value={fav_book_genre}>
+				<option></option>
+				<option>Action</option>
+				<option>Comedy</option>
+				<option>Drama</option>
+				<option>Thriller</option>
 			</select>
 
 		</fieldset>
