@@ -7,27 +7,23 @@ export const actions = {
 		const fdata = await request.formData();
 		const id = fdata.get('id');
 
-		const nickname = fdata.get('nickname')?.trim();
-		const github_handle = fdata.get('github_handle').replace('https://github.com/', '').trim();
-		const website = fdata.get('website')?.trim();
-		const bio = fdata.get('bio')?.trim();
-		const avatar = fdata.get('avatar')?.trim();
-		let birthdate = fdata.get('birthdate')?.trim();
-		if (birthdate == '') {
-			birthdate = null;
-		}
-		let fav_color = fdata.get('fav_color');
-		if (fav_color == '') {
-			fav_color = null;
-		}
-		const fav_tag = fdata.get('fav_tag')?.trim();
-		const fav_attribute = fdata.get('fav_attribute')?.trim();
-		const fav_property = fdata.get('fav_property')?.trim();
-		const fav_feature = fdata.get('fav_feature')?.trim();
-		const fav_kitchen = fdata.get('fav_kitchen')?.trim();
-		const fav_book_genre = fdata.get('fav_book_genre')?.trim();
-		const fav_country = fdata.get('fav_country')?.trim();
-		const custom = fdata.get('custom')?.trim();
+		const nickname = fdata.get('nickname')?.trim() || null;
+		const github_handle = fdata.get('github_handle').replace('https://github.com/', '').trim() || null;
+		const website = fdata.get('website')?.trim() || null;
+		const bio = fdata.get('bio')?.trim() || null;
+		const avatar = fdata.get('avatar')?.trim() || null;
+
+		const birthdate = fdata.get('birthdate')?.trim() || null;
+		const fav_color = fdata.get('fav_color')?.trim() || null;
+		const fav_tag = fdata.get('fav_tag')?.trim() || null;
+		const fav_attribute = fdata.get('fav_attribute')?.trim() || null;
+		const fav_property = fdata.get('fav_property')?.trim() || null;
+		const fav_feature = fdata.get('fav_feature')?.trim() || null;
+		const fav_kitchen = fdata.get('fav_kitchen')?.trim() || null;
+		const fav_book_genre = fdata.get('fav_book_genre')?.trim() || null;
+		const fav_country = fdata.get('fav_country')?.trim() || null;
+
+		const custom = fdata.get('custom')?.trim() || null;
 
 		const body = JSON.stringify({
 			nickname,
