@@ -22,6 +22,7 @@ export const actions = {
 		const fav_kitchen = fdata.get('fav_kitchen')?.trim() || null;
 		const fav_book_genre = fdata.get('fav_book_genre')?.trim() || null;
 		const fav_country = fdata.get('fav_country')?.trim() || null;
+		const most_energy = fdata.get('most_energy')?.trim() || null;
 
 		const custom = fdata.get('custom')?.trim() || null;
 
@@ -41,6 +42,7 @@ export const actions = {
 			fav_kitchen,
 			fav_book_genre,
 			fav_country,
+			most_energy,
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {

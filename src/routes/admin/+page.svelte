@@ -25,6 +25,7 @@
 	let fav_kitchen = form?.fav_kitchen || null;
 	let fav_book_genre = form?.fav_book_genre || null;
 	let fav_country = form?.fav_country || null;
+	let most_energy = form?.most_energy || '';
 
 	function populate() {
 		hidden = true;
@@ -51,6 +52,7 @@
 						fav_kitchen = data.fav_kitchen;
 						fav_book_genre = data.fav_book_genre;
 						fav_country = data.fav_country;
+						most_energy = data.most_energy || '';
 					}
 				});
 		}
@@ -1438,6 +1440,13 @@
 				<option value="ZWE">Zimbabwe</option>
 			</select>
 			<small>Voor gebruik met bijvoorbeeld <a href="https://datamaps.github.io/">DataMaps</a></small>
+
+			<label for="most_energy">Wanneer heb je de meeste energie?</label>
+			<select name="most_energy" id="most_energy" bind:value={most_energy}>
+				<option value="">Ik ben flexibel</option>
+				<option value="morning">Ik ben een ochtendmens</option>
+				<option value="evening">Ik ben een avondmens</option>
+			</select>
 
 		</fieldset>
 
