@@ -27,6 +27,7 @@
 	let fav_country = form?.fav_country || null;
 	let most_energy = form?.most_energy || '';
 	let fav_coffee = form?.fav_coffee || null;
+	let fav_emoji = form?.fav_emoji || null;
 
 	function populate() {
 		hidden = true;
@@ -55,6 +56,7 @@
 						fav_country = data.fav_country;
 						most_energy = data.most_energy || '';
 						fav_coffee = data.fav_coffee;
+						fav_emoji = data.fav_emoji;
 					}
 				});
 		}
@@ -84,22 +86,22 @@
 		<input type="hidden" name="name" id="name" bind:value={name}>
 
 		<label for="nickname">Bijnaam:</label>
-		<input type="text" name="nickname" id="nickname" bind:value={nickname} placeholder="">
+		<input type="text" name="nickname" id="nickname" bind:value={nickname}>
 
 		<label for="github_handle">GitHub handle:</label>
-		<input type="text" name="github_handle" id="github_handle" bind:value={github_handle} placeholder="">
+		<input type="text" name="github_handle" id="github_handle" bind:value={github_handle}>
 
 		<label for="website">Website (geldige URL):</label>
-		<input type="url" name="website" id="website" bind:value={website} placeholder="">
+		<input type="url" name="website" id="website" bind:value={website}>
 
 		<label for="bio">Bio:</label>
-		<textarea name="bio" id="bio" cols="30" rows="10" bind:value={bio} placeholder=""></textarea>
+		<textarea name="bio" id="bio" cols="30" rows="10" bind:value={bio}></textarea>
 
 		<label for="avatar">Avatar (geldige URL, bijvoorbeeld je GitHub avatar):</label>
-		<input type="url" name="avatar" id="avatar" bind:value={avatar} placeholder="">
+		<input type="url" name="avatar" id="avatar" bind:value={avatar}>
 
 		<label for="birthdate">Geboortedatum:</label>
-		<input type="date" name="birthdate" id="birthdate" bind:value={birthdate} placeholder="">
+		<input type="date" name="birthdate" id="birthdate" bind:value={birthdate}>
 
 		<label for="custom">Eigen velden (geldige JSON):</label>
 		<textarea name="custom" id="custom" cols="30" rows="10" bind:value={custom} onblur="checkJSON()"></textarea>
@@ -108,7 +110,7 @@
 			<legend>Extra's</legend>
 
 			<label for="fav_color">Favoriete kleur:</label>
-			<input type="color" name="fav_color" id="fav_color" bind:value={fav_color} placeholder="">
+			<input type="color" name="fav_color" id="fav_color" bind:value={fav_color}>
 
 			<label for="fav_tag">Favoriete HTML tag:</label>
 			<input type="text" name="fav_tag" id="fav_tag" bind:value={fav_tag} list="tags">
@@ -1458,6 +1460,9 @@
 				<option>Koffie verkeerd</option>
 				<option>Latte</option>
 			</datalist>
+
+			<label for="fav_emoji">Favoriete emoji:</label>
+			<input type="text" name="fav_emoji" id="fav_emoji" bind:value={fav_emoji}>
 
 		</fieldset>
 

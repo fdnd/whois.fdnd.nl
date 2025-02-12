@@ -24,6 +24,7 @@ export const actions = {
 		const fav_country = fdata.get('fav_country')?.trim() || null;
 		const most_energy = fdata.get('most_energy')?.trim() || null;
 		const fav_coffee = fdata.get('fav_coffee')?.trim() || null;
+		const fav_emoji = fdata.get('fav_emoji')?.trim() || null;
 
 		const custom = fdata.get('custom')?.trim() || null;
 
@@ -45,6 +46,7 @@ export const actions = {
 			fav_country,
 			most_energy,
 			fav_coffee,
+			fav_emoji,
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {
