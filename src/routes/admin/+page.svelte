@@ -26,6 +26,7 @@
 	let fav_book_genre = form?.fav_book_genre || null;
 	let fav_country = form?.fav_country || null;
 	let most_energy = form?.most_energy || '';
+	let fav_coffee = form?.fav_coffee || null;
 
 	function populate() {
 		hidden = true;
@@ -53,6 +54,7 @@
 						fav_book_genre = data.fav_book_genre;
 						fav_country = data.fav_country;
 						most_energy = data.most_energy || '';
+						fav_coffee = data.fav_coffee;
 					}
 				});
 		}
@@ -109,7 +111,7 @@
 			<input type="color" name="fav_color" id="fav_color" bind:value={fav_color} placeholder="">
 
 			<label for="fav_tag">Favoriete HTML tag:</label>
-			<input type="text" name="fav_tag" id="fav_tag" bind:value={fav_tag} placeholder="" list="tags">
+			<input type="text" name="fav_tag" id="fav_tag" bind:value={fav_tag} list="tags">
 			<datalist id="tags">
 				<option>&lt;a&gt;</option>
 				<option>&lt;abbr&gt;</option>
@@ -228,7 +230,7 @@
 			</datalist>
 
 			<label for="fav_attribute">Favoriete HTML attribuut:</label>
-			<input type="text" name="fav_attribute" id="fav_attribute" bind:value={fav_attribute} placeholder="" list="attributes">
+			<input type="text" name="fav_attribute" id="fav_attribute" bind:value={fav_attribute} list="attributes">
 			<datalist id="attributes">
 				<option>abbr</option>
 				<option>accept</option>
@@ -459,7 +461,7 @@
 			</datalist>
 
 			<label for="fav_property">Favoriete CSS property:</label>
-			<input type="text" name="fav_property" id="fav_property" bind:value={fav_property} placeholder="" list="properties">
+			<input type="text" name="fav_property" id="fav_property" bind:value={fav_property} list="properties">
 			<datalist id="properties">
 				<option>accent-color</option>
 				<option>align-content</option>
@@ -1077,7 +1079,7 @@
 			</datalist>
 
 			<label for="fav_feature">Favoriete JS feature:</label>
-			<input type="text" name="fav_feature" id="fav_feature" bind:value={fav_feature} placeholder="" list="features">
+			<input type="text" name="fav_feature" id="fav_feature" bind:value={fav_feature} list="features">
 			<datalist id="features">
 				<option>Attribution Reporting</option>
 				<option>Audio Output Devices</option>
@@ -1447,6 +1449,15 @@
 				<option value="morning">Ik ben een ochtendmens</option>
 				<option value="evening">Ik ben een avondmens</option>
 			</select>
+			<label for="fav_coffee">Favoriete koffie:</label>
+			<input type="text" name="fav_coffee" id="fav_coffee" bind:value={fav_coffee} list="coffees">
+			<datalist id="coffees">
+				<option>Cappuccino</option>
+				<option>Espresso</option>
+				<option>Irish coffee</option>
+				<option>Koffie verkeerd</option>
+				<option>Latte</option>
+			</datalist>
 
 		</fieldset>
 
