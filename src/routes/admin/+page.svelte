@@ -28,6 +28,7 @@
 	let most_energy = form?.most_energy || '';
 	let fav_coffee = form?.fav_coffee || null;
 	let fav_emoji = form?.fav_emoji || null;
+	let fav_hobby = form?.fav_hobby || null;
 
 	function populate() {
 		hidden = true;
@@ -57,6 +58,7 @@
 						most_energy = data.most_energy || '';
 						fav_coffee = data.fav_coffee;
 						fav_emoji = data.fav_emoji;
+						fav_hobby = data.fav_hobby;
 					}
 				});
 		}
@@ -1451,6 +1453,7 @@
 				<option value="morning">Ik ben een ochtendmens</option>
 				<option value="evening">Ik ben een avondmens</option>
 			</select>
+
 			<label for="fav_coffee">Favoriete koffie:</label>
 			<input type="text" name="fav_coffee" id="fav_coffee" bind:value={fav_coffee} list="coffees">
 			<datalist id="coffees">
@@ -1463,6 +1466,23 @@
 
 			<label for="fav_emoji">Favoriete emoji:</label>
 			<input type="text" name="fav_emoji" id="fav_emoji" bind:value={fav_emoji}>
+
+			<label for="fav_hobby">Hobby:</label>
+			<input type="text" name="fav_hobby" id="fav_hobby" bind:value={fav_hobby} list="hobbies">
+			<datalist id="hobbies">
+				<option>Chillen</option>
+				<option>Coden</option>
+				<option>Dammen</option>
+				<option>Festivals</option>
+				<option>Fitness</option>
+				<option>Gamen</option>
+				<option>Haken</option>
+				<option>Lezen</option>
+				<option>Muziek</option>
+				<option>Schaken</option>
+				<option>Sporten</option>
+				<option>Uitgaan</option>
+			</datalist>
 
 		</fieldset>
 
