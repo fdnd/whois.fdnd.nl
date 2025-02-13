@@ -1509,6 +1509,7 @@
 				<option>Krokodil</option>
 				<option>Leeuw</option>
 				<option>Olifant</option>
+				<option>Otter</option>
 				<option>Paard</option>
 				<option>Panda</option>
 				<option>Schaap</option>
