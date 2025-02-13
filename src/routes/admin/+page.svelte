@@ -29,6 +29,7 @@
 	let fav_coffee = form?.fav_coffee || null;
 	let fav_emoji = form?.fav_emoji || null;
 	let fav_hobby = form?.fav_hobby || null;
+	let fav_animal = form?.fav_animal || null;
 
 	function populate() {
 		hidden = true;
@@ -59,6 +60,7 @@
 						fav_coffee = data.fav_coffee;
 						fav_emoji = data.fav_emoji;
 						fav_hobby = data.fav_hobby;
+						fav_animal = data.fav_animal || '';
 					}
 				});
 		}
@@ -1483,6 +1485,41 @@
 				<option>Sporten</option>
 				<option>Uitgaan</option>
 			</datalist>
+
+			<label for="fav_animal">Favoriet dier</label>
+			<select name="fav_animal" id="fav_animal" bind:value={fav_animal}>
+				<option></option>
+				<option>Aap</option>
+				<option>Cavia</option>
+				<option>Dino</option>
+				<option>Dolfijn</option>
+				<option>Eend</option>
+				<option>Eenhoorn</option>
+				<option>Egel</option>
+				<option>Giraffe</option>
+				<option>Haai</option>
+				<option>Hamster</option>
+				<option>Hond</option>
+				<option>Inktvis</option>
+				<option>Kat</option>
+				<option>Kikker</option>
+				<option>Kip</option>
+				<option>Koe</option>
+				<option>Konijn</option>
+				<option>Krokodil</option>
+				<option>Leeuw</option>
+				<option>Olifant</option>
+				<option>Paard</option>
+				<option>Panda</option>
+				<option>Schaap</option>
+				<option>Schildpad</option>
+				<option>Tijger</option>
+				<option>Vis</option>
+				<option>Vlinder</option>
+				<option>Vogel</option>
+				<option>Zebra</option>
+				<option>Zeehond</option>
+			</select>
 
 		</fieldset>
 
