@@ -13,6 +13,7 @@
 	let nickname = form?.nickname || null;
 	let github_handle = form?.github_handle || null;
 	let website = form?.website || null;
+	let profilecard = form?.profilecard || null;
 	let bio = form?.bio || null;
 	let avatar = form?.avatar || null;
 	let birthdate = form?.birthdate || null;
@@ -44,6 +45,7 @@
 						nickname = data.nickname;
 						github_handle = data.github_handle;
 						website = data.website;
+						profilecard = data.profilecard;
 						bio = data.bio;
 						avatar = data.avatar;
 						birthdate = data.birthdate;
@@ -97,6 +99,9 @@
 
 		<label for="website">Website (geldige URL):</label>
 		<input type="url" name="website" id="website" bind:value={website}>
+
+		<label for="profilecard">Profilecard link (geldige URL):</label>
+		<input type="url" name="profilecard" id="profilecard" bind:value={profilecard}>
 
 		<label for="bio">Bio:</label>
 		<textarea name="bio" id="bio" cols="30" rows="10" bind:value={bio}></textarea>
