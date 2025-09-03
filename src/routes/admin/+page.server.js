@@ -10,6 +10,7 @@ export const actions = {
 		const nickname = fdata.get('nickname')?.trim() || null;
 		const github_handle = fdata.get('github_handle').replace('https://github.com/', '').trim() || null;
 		const website = fdata.get('website')?.trim() || null;
+		const profilecard = fdata.get('profilecard')?.trim() || null;
 		const bio = fdata.get('bio')?.trim() || null;
 		const avatar = fdata.get('avatar')?.trim() || null;
 
@@ -34,6 +35,7 @@ export const actions = {
 			nickname,
 			github_handle,
 			website,
+			profilecard,
 			bio,
 			avatar,
 			birthdate,
