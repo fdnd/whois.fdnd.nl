@@ -115,7 +115,7 @@
 		<label for="custom">Eigen velden (geldige JSON):</label>
 		<textarea name="custom" id="custom" cols="30" rows="10" bind:value={custom} onblur="checkJSON()"></textarea>
 
-		<fieldset>
+		<fieldset hidden>
 			<legend>Extra's</legend>
 
 			<label for="fav_color">Favoriete kleur:</label>
