@@ -115,7 +115,7 @@
 		<label for="custom">Eigen velden (geldige JSON):</label>
 		<textarea name="custom" id="custom" cols="30" rows="10" bind:value={custom} onblur="checkJSON()"></textarea>
 
-		<fieldset hidden>
+		<fieldset>
 			<legend>Extra's</legend>
 
 			<label for="fav_color">Favoriete kleur:</label>
@@ -1232,6 +1232,8 @@
 				<option>XMLHttpRequest</option>
 			</datalist>
 
+			<div hidden>
+
 			<label for="fav_kitchen">Favoriete gerecht:</label>
 			<select name="fav_kitchen" id="fav_kitchen" bind:value={fav_kitchen}>
 				<option></option>
@@ -1526,6 +1528,8 @@
 				<option>Zebra</option>
 				<option>Zeehond</option>
 			</select>
+
+			</div>
 
 		</fieldset>
 
