@@ -31,6 +31,8 @@
 	let fav_emoji = form?.fav_emoji || null;
 	let fav_hobby = form?.fav_hobby || null;
 	let fav_animal = form?.fav_animal || null;
+	let is_bold = form?.is_bold || false;
+
 
 	function populate() {
 		hidden = true;
@@ -63,6 +65,7 @@
 						fav_emoji = data.fav_emoji;
 						fav_hobby = data.fav_hobby;
 						fav_animal = data.fav_animal || '';
+						is_bold = data.is_bold;
 					}
 				});
 		}
@@ -1231,6 +1234,9 @@
 				<option>Window Management</option>
 				<option>XMLHttpRequest</option>
 			</datalist>
+
+			<label for="is_bold">Heeft terugtrekkende haarlijn</label>
+			<input type="checkbox" name="is_bold" id="is_bold" bind:checked={is_bold}>
 
 			<div hidden>
 
