@@ -34,6 +34,7 @@
 	let fav_animal = form?.fav_animal || null;
 	let is_bold = form?.is_bold || false;
 	let fav_border_radius = form?.fav_border_radius || null;
+	let residency = form?.residency || null;
 
 
 	function populate() {
@@ -70,6 +71,7 @@
 						fav_animal = data.fav_animal || '';
 						is_bold = data.is_bold;
 						fav_border_radius = data.fav_border_radius || '';
+						residency = data.residency;
 					}
 				});
 		}
@@ -1250,6 +1252,9 @@
 
 			<label for="fav_spotify_track">Favoriete Spotify track (geldige URL):</label>
 			<input type="url" name="fav_spotify_track" pattern="https://open.spotify.com/track/.*" id="fav_spotify_track" bind:value={fav_spotify_track}>
+
+			<label for="residency">Woonplaats:</label>
+			<input type="text" name="residency" id="residency" bind:value={residency}>
 
 			<div hidden>
 
