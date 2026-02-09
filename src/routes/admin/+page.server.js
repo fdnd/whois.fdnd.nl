@@ -34,6 +34,7 @@ export const actions = {
 		const residency = fdata.get('residency')?.trim() || null;
 		const shoe_size = fdata.get('shoe_size')?.trim() || null;
 		const vibe_emoji = fdata.get('vibe_emoji')?.trim() || null;
+		const fav_season = fdata.get('fav_season')?.trim() || null;
 
 		const custom = fdata.get('custom')?.trim() || null;
 
@@ -65,6 +66,7 @@ export const actions = {
 			residency,
 			shoe_size,
 			vibe_emoji,
+			fav_season,
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {

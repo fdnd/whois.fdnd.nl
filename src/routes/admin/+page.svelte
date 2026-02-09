@@ -37,6 +37,7 @@
 	let residency = form?.residency || null;
 	let shoe_size = form?.shoe_size || null;
 	let vibe_emoji = form?.vibe_emoji || null;
+	let fav_season = form?.fav_season || null;
 
 
 	function populate() {
@@ -76,6 +77,7 @@
 						residency = data.residency;
 						shoe_size = data.shoe_size;
 						vibe_emoji = data.vibe_emoji;
+						fav_season = data.fav_season || '';
 					}
 				});
 		}
@@ -1298,6 +1300,15 @@
 				<option>🪤</option>
 				<option>🫧</option>
 				<option>💅🏻</option>
+			</select>
+
+			<label for="fav_season">Favoriet seizoen</label>
+			<select name="fav_season" id="fav_season" bind:value={fav_season}>
+				<option></option>
+				<option>Lente</option>
+				<option>Zomer</option>
+				<option>Herfst</option>
+				<option>Winter</option>
 			</select>
 
 			<div hidden>
