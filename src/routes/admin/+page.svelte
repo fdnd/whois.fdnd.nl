@@ -1261,6 +1261,28 @@
 			<label for="shoe_size">Schoenmaat</label>
 			<input type="number" name="shoe_size" id="shoe_size" bind:value={shoe_size} min="35" max="50">
 
+			<label for="fav_animal">Favoriet dier</label>
+			<select name="fav_animal" id="fav_animal" bind:value={fav_animal}>
+				<option></option>
+				<option>Dromedaris</option>
+				<option>Flamingo</option>
+				<option>Giraffe</option>
+				<option>Kameleon</option>
+				<option>Kangoeroe</option>
+				<option>Koala</option>
+				<option>Leeuw</option>
+				<option>Neushoorn</option>
+				<option>Nijlpaard</option>
+				<option>Olifant</option>
+				<option>Panda</option>
+				<option>Papegaai</option>
+				<option>Pinguin</option>
+				<option>Ringstaartmaki</option>
+				<option>Struisvogel</option>
+				<option>Tijger</option>
+				<option>Zebra</option>
+			</select>
+
 			<div hidden>
 
 			<label for="fav_kitchen">Favoriete gerecht:</label>
@@ -1518,42 +1540,6 @@
 				<option>Sporten</option>
 				<option>Uitgaan</option>
 			</datalist>
-
-			<label for="fav_animal">Favoriet dier</label>
-			<select name="fav_animal" id="fav_animal" bind:value={fav_animal}>
-				<option></option>
-				<option>Aap</option>
-				<option>Cavia</option>
-				<option>Dino</option>
-				<option>Dolfijn</option>
-				<option>Eend</option>
-				<option>Eenhoorn</option>
-				<option>Egel</option>
-				<option>Giraffe</option>
-				<option>Haai</option>
-				<option>Hamster</option>
-				<option>Hond</option>
-				<option>Inktvis</option>
-				<option>Kat</option>
-				<option>Kikker</option>
-				<option>Kip</option>
-				<option>Koe</option>
-				<option>Konijn</option>
-				<option>Krokodil</option>
-				<option>Leeuw</option>
-				<option>Olifant</option>
-				<option>Otter</option>
-				<option>Paard</option>
-				<option>Panda</option>
-				<option>Schaap</option>
-				<option>Schildpad</option>
-				<option>Tijger</option>
-				<option>Vis</option>
-				<option>Vlinder</option>
-				<option>Vogel</option>
-				<option>Zebra</option>
-				<option>Zeehond</option>
-			</select>
 
 			</div>
 
