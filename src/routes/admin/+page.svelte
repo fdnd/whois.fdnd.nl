@@ -1268,12 +1268,13 @@
 			<label for="fav_animal">Favoriet dier</label>
 			<select name="fav_animal" id="fav_animal" bind:value={fav_animal}>
 				<option></option>
-				<option>Dromedaris</option>
+				<option>Aap</option>
 				<option>Flamingo</option>
 				<option>Giraffe</option>
-				<option>Kameleon</option>
-				<option>Kangoeroe</option>
+				<option>Hond</option>
+				<option>Kat</option>
 				<option>Koala</option>
+				<option>Konijn</option>
 				<option>Leeuw</option>
 				<option>Neushoorn</option>
 				<option>Nijlpaard</option>
@@ -1281,9 +1282,8 @@
 				<option>Panda</option>
 				<option>Papegaai</option>
 				<option>Pinguin</option>
-				<option>Ringstaartmaki</option>
-				<option>Struisvogel</option>
 				<option>Tijger</option>
+				<option>Vos</option>
 				<option>Zebra</option>
 			</select>
 
