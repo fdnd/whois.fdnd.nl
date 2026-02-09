@@ -1243,6 +1243,9 @@
 			<label for="fav_border_radius">Favoriete border-radius</label>
 			<input type="number" name="fav_border_radius" id="fav_border_radius" bind:value={fav_border_radius}>
 
+			<label for="fav_emoji">Favoriete emoji:</label>
+			<input type="text" name="fav_emoji" id="fav_emoji" bind:value={fav_emoji}>
+
 			<div hidden>
 
 			<label for="fav_kitchen">Favoriete gerecht:</label>
@@ -1483,9 +1486,6 @@
 				<option>Koffie verkeerd</option>
 				<option>Latte</option>
 			</datalist>
-
-			<label for="fav_emoji">Favoriete emoji:</label>
-			<input type="text" name="fav_emoji" id="fav_emoji" bind:value={fav_emoji}>
 
 			<label for="fav_hobby">Hobby:</label>
 			<input type="text" name="fav_hobby" id="fav_hobby" bind:value={fav_hobby} list="hobbies">
