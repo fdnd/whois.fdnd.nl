@@ -35,6 +35,7 @@
 	let is_bold = form?.is_bold || false;
 	let fav_border_radius = form?.fav_border_radius || null;
 	let residency = form?.residency || null;
+	let shoe_size = form?.shoe_size || null;
 
 
 	function populate() {
@@ -72,6 +73,7 @@
 						is_bold = data.is_bold;
 						fav_border_radius = data.fav_border_radius || '';
 						residency = data.residency;
+						shoe_size = data.shoe_size;
 					}
 				});
 		}
@@ -1255,6 +1257,9 @@
 
 			<label for="residency">Woonplaats:</label>
 			<input type="text" name="residency" id="residency" bind:value={residency}>
+
+			<label for="shoe_size">Schoenmaat</label>
+			<input type="number" name="shoe_size" id="shoe_size" bind:value={shoe_size} min="35" max="50">
 
 			<div hidden>
 

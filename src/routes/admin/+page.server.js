@@ -32,6 +32,7 @@ export const actions = {
 		const is_bold = fdata.get('is_bold')?.trim() ? true : false;
 		const fav_border_radius = fdata.get('fav_border_radius')?.trim() || null;
 		const residency = fdata.get('residency')?.trim() || null;
+		const shoe_size = fdata.get('shoe_size')?.trim() || null;
 
 		const custom = fdata.get('custom')?.trim() || null;
 
@@ -61,6 +62,7 @@ export const actions = {
 			is_bold,
 			fav_border_radius,
 			residency,
+			shoe_size,
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {
