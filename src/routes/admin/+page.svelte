@@ -29,6 +29,7 @@
 	let most_energy = form?.most_energy || '';
 	let fav_coffee = form?.fav_coffee || null;
 	let fav_emoji = form?.fav_emoji || null;
+	let fav_spotify_track = form?.fav_spotify_track || null;
 	let fav_hobby = form?.fav_hobby || null;
 	let fav_animal = form?.fav_animal || null;
 	let is_bold = form?.is_bold || false;
@@ -64,6 +65,7 @@
 						most_energy = data.most_energy || '';
 						fav_coffee = data.fav_coffee;
 						fav_emoji = data.fav_emoji;
+						fav_spotify_track = data.fav_spotify_track;
 						fav_hobby = data.fav_hobby;
 						fav_animal = data.fav_animal || '';
 						is_bold = data.is_bold;
@@ -1245,6 +1247,9 @@
 
 			<label for="fav_emoji">Favoriete emoji:</label>
 			<input type="text" name="fav_emoji" id="fav_emoji" bind:value={fav_emoji}>
+
+			<label for="fav_spotify_track">Favoriete Spotify track (geldige URL):</label>
+			<input type="url" name="fav_spotify_track" pattern="https://open.spotify.com/track/.*" id="fav_spotify_track" bind:value={fav_spotify_track}>
 
 			<div hidden>
 

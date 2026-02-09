@@ -26,6 +26,7 @@ export const actions = {
 		const most_energy = fdata.get('most_energy')?.trim() || null;
 		const fav_coffee = fdata.get('fav_coffee')?.trim() || null;
 		const fav_emoji = fdata.get('fav_emoji')?.trim() || null;
+		const fav_spotify_track = fdata.get('fav_spotify_track')?.trim() || null;
 		const fav_hobby = fdata.get('fav_hobby')?.trim() || null;
 		const fav_animal = fdata.get('fav_animal')?.trim() || null;
 		const is_bold = fdata.get('is_bold')?.trim() ? true : false;
@@ -53,6 +54,7 @@ export const actions = {
 			most_energy,
 			fav_coffee,
 			fav_emoji,
+			fav_spotify_track,
 			fav_hobby,
 			fav_animal,
 			is_bold,
