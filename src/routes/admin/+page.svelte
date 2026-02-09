@@ -36,6 +36,7 @@
 	let fav_border_radius = form?.fav_border_radius || null;
 	let residency = form?.residency || null;
 	let shoe_size = form?.shoe_size || null;
+	let vibe_emoji = form?.vibe_emoji || null;
 
 
 	function populate() {
@@ -74,6 +75,7 @@
 						fav_border_radius = data.fav_border_radius || '';
 						residency = data.residency;
 						shoe_size = data.shoe_size;
+						vibe_emoji = data.vibe_emoji;
 					}
 				});
 		}
@@ -1281,6 +1283,21 @@
 				<option>Struisvogel</option>
 				<option>Tijger</option>
 				<option>Zebra</option>
+			</select>
+
+			<label for="vibe_emoji">Jouw vibe emoji</label>
+			<select name="vibe_emoji" id="vibe_emoji" bind:value={vibe_emoji}>
+				<option></option>
+				<option>🧌</option>
+				<option>🍗</option>
+				<option>❤️</option>
+				<option>🫡</option>
+				<option>🤑</option>
+				<option>👀</option>
+				<option>🦧</option>
+				<option>🪤</option>
+				<option>🫧</option>
+				<option>💅🏻</option>
 			</select>
 
 			<div hidden>
