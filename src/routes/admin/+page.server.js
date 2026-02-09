@@ -29,6 +29,7 @@ export const actions = {
 		const fav_hobby = fdata.get('fav_hobby')?.trim() || null;
 		const fav_animal = fdata.get('fav_animal')?.trim() || null;
 		const is_bold = fdata.get('is_bold')?.trim() ? true : false;
+		const fav_border_radius = fdata.get('fav_border_radius')?.trim() || null;
 
 		const custom = fdata.get('custom')?.trim() || null;
 
@@ -55,6 +56,7 @@ export const actions = {
 			fav_hobby,
 			fav_animal,
 			is_bold,
+			fav_border_radius,
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {

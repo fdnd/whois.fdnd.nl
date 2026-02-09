@@ -32,6 +32,7 @@
 	let fav_hobby = form?.fav_hobby || null;
 	let fav_animal = form?.fav_animal || null;
 	let is_bold = form?.is_bold || false;
+	let fav_border_radius = form?.fav_border_radius || null;
 
 
 	function populate() {
@@ -66,6 +67,7 @@
 						fav_hobby = data.fav_hobby;
 						fav_animal = data.fav_animal || '';
 						is_bold = data.is_bold;
+						fav_border_radius = data.fav_border_radius || '';
 					}
 				});
 		}
@@ -1237,6 +1239,9 @@
 
 			<label for="is_bold">Heeft terugtrekkende haarlijn</label>
 			<input type="checkbox" name="is_bold" id="is_bold" bind:checked={is_bold}>
+
+			<label for="fav_border_radius">Favoriete border-radius</label>
+			<input type="number" name="fav_border_radius" id="fav_border_radius" bind:value={fav_border_radius}>
 
 			<div hidden>
 
