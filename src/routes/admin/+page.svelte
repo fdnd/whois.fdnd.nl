@@ -38,7 +38,12 @@
 	let shoe_size = form?.shoe_size || null;
 	let vibe_emoji = form?.vibe_emoji || null;
 	let fav_season = form?.fav_season || null;
-
+	let fav_song = form?.fav_song || null;
+	let fav_music_genre = form?.fav_music_genre || null;
+	let fav_game = form?.fav_game || null;
+	let fav_fruit = form?.fav_fruit || null;
+	let fav_soup = form?.fav_soup || null;
+	let fav_movie = form?.fav_movie || null;
 
 	function populate() {
 		hidden = true;
@@ -78,6 +83,12 @@
 						shoe_size = data.shoe_size;
 						vibe_emoji = data.vibe_emoji;
 						fav_season = data.fav_season || '';
+						fav_song = data.fav_song || '';
+						fav_music_genre = data.fav_music_genre || '';
+						fav_game = data.fav_game || '';
+						fav_fruit = data.fav_fruit || '';
+						fav_soup = data.fav_soup || '';
+						fav_movie = data.fav_movie || '';
 					}
 				});
 		}
@@ -1311,6 +1322,42 @@
 				<option>Winter</option>
 			</select>
 
+			<label for="fav_hobby">Hobby:</label>
+			<input type="text" name="fav_hobby" id="fav_hobby" bind:value={fav_hobby} list="hobbies">
+			<datalist id="hobbies">
+				<option>Chillen</option>
+				<option>Coden</option>
+				<option>Dammen</option>
+				<option>Festivals</option>
+				<option>Fitness</option>
+				<option>Gamen</option>
+				<option>Haken</option>
+				<option>Lezen</option>
+				<option>Muziek</option>
+				<option>Schaken</option>
+				<option>Sporten</option>
+				<option>Uitgaan</option>
+			</datalist>
+
+			<label for="fav_song">Favoriete muziek nummer:</label>
+			<input type="text" name="fav_song" id="fav_song" bind:value={fav_song}>
+
+			<label for="fav_music_genre">Favoriete muziek genre:</label>
+			<input type="text" name="fav_music_genre" id="fav_music_genre" bind:value={fav_music_genre}>
+
+			<label for="fav_game">Favoriete game:</label>
+			<input type="text" name="fav_game" id="fav_game" bind:value={fav_game}>
+
+			<label for="fav_fruit">Favoriete fruit:</label>
+			<input type="text" name="fav_fruit" id="fav_fruit" bind:value={fav_fruit}>
+
+			<label for="fav_soup">Favoriete soep:</label>
+			<input type="text" name="fav_soup" id="fav_soup" bind:value={fav_soup}>
+
+			<label for="fav_movie">Favoriete film:</label>
+			<input type="text" name="fav_movie" id="fav_movie" bind:value={fav_movie}>
+
+
 			<div hidden>
 
 			<label for="fav_kitchen">Favoriete gerecht:</label>
@@ -1550,23 +1597,6 @@
 				<option>Irish coffee</option>
 				<option>Koffie verkeerd</option>
 				<option>Latte</option>
-			</datalist>
-
-			<label for="fav_hobby">Hobby:</label>
-			<input type="text" name="fav_hobby" id="fav_hobby" bind:value={fav_hobby} list="hobbies">
-			<datalist id="hobbies">
-				<option>Chillen</option>
-				<option>Coden</option>
-				<option>Dammen</option>
-				<option>Festivals</option>
-				<option>Fitness</option>
-				<option>Gamen</option>
-				<option>Haken</option>
-				<option>Lezen</option>
-				<option>Muziek</option>
-				<option>Schaken</option>
-				<option>Sporten</option>
-				<option>Uitgaan</option>
 			</datalist>
 
 			</div>

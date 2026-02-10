@@ -35,6 +35,12 @@ export const actions = {
 		const shoe_size = fdata.get('shoe_size')?.trim() || null;
 		const vibe_emoji = fdata.get('vibe_emoji')?.trim() || null;
 		const fav_season = fdata.get('fav_season')?.trim() || null;
+		const fav_song = fdata.get('fav_song')?.trim() || null;
+		const fav_music_genre = fdata.get('fav_music_genre')?.trim() || null;
+		const fav_game = fdata.get('fav_game')?.trim() || null;
+		const fav_fruit = fdata.get('fav_fruit')?.trim() || null;
+		const fav_soup = fdata.get('fav_soup')?.trim() || null;
+		const fav_movie = fdata.get('fav_movie')?.trim() || null;
 
 		const custom = fdata.get('custom')?.trim() || null;
 
@@ -67,6 +73,12 @@ export const actions = {
 			shoe_size,
 			vibe_emoji,
 			fav_season,
+			fav_song,
+			fav_music_genre,
+			fav_game,
+			fav_fruit,
+			fav_soup,
+			fav_movie,
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {
