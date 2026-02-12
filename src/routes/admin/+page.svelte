@@ -44,6 +44,8 @@
 	let fav_fruit = form?.fav_fruit || null;
 	let fav_soup = form?.fav_soup || null;
 	let fav_movie = form?.fav_movie || null;
+	let length = form?.length || null;
+	let hair_color = form?.hair_color || null;
 
 	function populate() {
 		hidden = true;
@@ -89,6 +91,8 @@
 						fav_fruit = data.fav_fruit || '';
 						fav_soup = data.fav_soup || '';
 						fav_movie = data.fav_movie || '';
+						length = data.length || '';
+						hair_color = data.hair_color || '';
 					}
 				});
 		}
@@ -142,10 +146,79 @@
 		<textarea name="custom" id="custom" cols="30" rows="10" bind:value={custom} onblur="checkJSON()"></textarea>
 
 		<fieldset>
-			<legend>Extra's</legend>
+			<legend>Fysieke kenmerken</legend>
 
-			<label for="fav_color">Favoriete kleur:</label>
+			<label for="hair_color">Haarkleur</label>
+			<select name="hair_color" id="hair_color" bind:value={hair_color}>
+				<option></option>
+				<option>Bruin</option>
+				<option>Zwart</option>
+				<option>Blond</option>
+				<option>Overig</option>
+			</select>
+
+			<label for="is_bold">Terugtrekkende haarlijn (lees: kaal)</label>
+			<input type="checkbox" name="is_bold" id="is_bold" bind:checked={is_bold}>
+
+			<label for="length">Lengte (in centimeter)</label>
+			<select name="length" id="length" bind:value={length}>
+				<option></option>
+				<option>200-190</option>
+				<option>190-180</option>
+				<option>180-170</option>
+				<option>170-160</option>
+				<option>160-150</option>
+			</select>
+
+			<label for="shoe_size">Schoenmaat</label>
+			<input type="number" name="shoe_size" id="shoe_size" bind:value={shoe_size} min="35" max="50">
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Overige</legend>
+
+			<label for="vibe_emoji">Jouw vibe emoji</label>
+			<select name="vibe_emoji" id="vibe_emoji" bind:value={vibe_emoji}>
+				<option></option>
+				<option>🧌</option>
+				<option>🍗</option>
+				<option>❤️</option>
+				<option>🫡</option>
+				<option>🤑</option>
+				<option>👀</option>
+				<option>🦧</option>
+				<option>🪤</option>
+				<option>🫧</option>
+				<option>💅🏻</option>
+			</select>
+
+			<label for="fav_color">Lievelingskleur:</label>
 			<input type="color" name="fav_color" id="fav_color" bind:value={fav_color}>
+
+			<label for="fav_hobby">Hobby:</label>
+			<input type="text" name="fav_hobby" id="fav_hobby" bind:value={fav_hobby} list="hobbies">
+			<datalist id="hobbies">
+				<option>Chillen</option>
+				<option>Coden</option>
+				<option>Dammen</option>
+				<option>Festivals</option>
+				<option>Fitness</option>
+				<option>Gamen</option>
+				<option>Haken</option>
+				<option>Lezen</option>
+				<option>Muziek</option>
+				<option>Schaken</option>
+				<option>Sporten</option>
+				<option>Uitgaan</option>
+			</datalist>
+
+			<label for="residency">Woonplaats:</label>
+			<input type="text" name="residency" id="residency" bind:value={residency}>
+		</fieldset>
+
+		<fieldset>
+			<legend>Nerdy voorkeuren</legend>
 
 			<label for="fav_tag">Favoriete HTML tag:</label>
 			<input type="text" name="fav_tag" id="fav_tag" bind:value={fav_tag} list="tags">
@@ -1258,23 +1331,18 @@
 				<option>XMLHttpRequest</option>
 			</datalist>
 
-			<label for="is_bold">Heeft terugtrekkende haarlijn</label>
-			<input type="checkbox" name="is_bold" id="is_bold" bind:checked={is_bold}>
-
 			<label for="fav_border_radius">Favoriete border-radius</label>
 			<input type="number" name="fav_border_radius" id="fav_border_radius" bind:value={fav_border_radius}>
+		</fieldset>
+
+		<fieldset>
+			<legend>Overige favorieten</legend>
 
 			<label for="fav_emoji">Favoriete emoji:</label>
 			<input type="text" name="fav_emoji" id="fav_emoji" bind:value={fav_emoji}>
 
 			<label for="fav_spotify_track">Favoriete Spotify track (geldige URL):</label>
 			<input type="url" name="fav_spotify_track" pattern="https://open.spotify.com/track/.*" id="fav_spotify_track" bind:value={fav_spotify_track}>
-
-			<label for="residency">Woonplaats:</label>
-			<input type="text" name="residency" id="residency" bind:value={residency}>
-
-			<label for="shoe_size">Schoenmaat</label>
-			<input type="number" name="shoe_size" id="shoe_size" bind:value={shoe_size} min="35" max="50">
 
 			<label for="fav_animal">Favoriet dier</label>
 			<select name="fav_animal" id="fav_animal" bind:value={fav_animal}>
@@ -1298,21 +1366,6 @@
 				<option>Zebra</option>
 			</select>
 
-			<label for="vibe_emoji">Jouw vibe emoji</label>
-			<select name="vibe_emoji" id="vibe_emoji" bind:value={vibe_emoji}>
-				<option></option>
-				<option>🧌</option>
-				<option>🍗</option>
-				<option>❤️</option>
-				<option>🫡</option>
-				<option>🤑</option>
-				<option>👀</option>
-				<option>🦧</option>
-				<option>🪤</option>
-				<option>🫧</option>
-				<option>💅🏻</option>
-			</select>
-
 			<label for="fav_season">Favoriet seizoen</label>
 			<select name="fav_season" id="fav_season" bind:value={fav_season}>
 				<option></option>
@@ -1321,23 +1374,6 @@
 				<option>Herfst</option>
 				<option>Winter</option>
 			</select>
-
-			<label for="fav_hobby">Hobby:</label>
-			<input type="text" name="fav_hobby" id="fav_hobby" bind:value={fav_hobby} list="hobbies">
-			<datalist id="hobbies">
-				<option>Chillen</option>
-				<option>Coden</option>
-				<option>Dammen</option>
-				<option>Festivals</option>
-				<option>Fitness</option>
-				<option>Gamen</option>
-				<option>Haken</option>
-				<option>Lezen</option>
-				<option>Muziek</option>
-				<option>Schaken</option>
-				<option>Sporten</option>
-				<option>Uitgaan</option>
-			</datalist>
 
 			<label for="fav_song">Favoriete muziek nummer:</label>
 			<input type="text" name="fav_song" id="fav_song" bind:value={fav_song}>
@@ -1356,9 +1392,9 @@
 
 			<label for="fav_movie">Favoriete film:</label>
 			<input type="text" name="fav_movie" id="fav_movie" bind:value={fav_movie}>
+		</fieldset>
 
-
-			<div hidden>
+		<div hidden>
 
 			<label for="fav_kitchen">Favoriete gerecht:</label>
 			<select name="fav_kitchen" id="fav_kitchen" bind:value={fav_kitchen}>
@@ -1599,9 +1635,7 @@
 				<option>Latte</option>
 			</datalist>
 
-			</div>
-
-		</fieldset>
+		</div>
 
 		<input type="submit" value="Opslaan">
 	</form>

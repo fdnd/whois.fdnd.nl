@@ -41,6 +41,8 @@ export const actions = {
 		const fav_fruit = fdata.get('fav_fruit')?.trim() || null;
 		const fav_soup = fdata.get('fav_soup')?.trim() || null;
 		const fav_movie = fdata.get('fav_movie')?.trim() || null;
+		const length = fdata.get('length')?.trim() || null;
+		const hair_color = fdata.get('hair_color')?.trim() || null;
 
 		const custom = fdata.get('custom')?.trim() || null;
 
@@ -79,6 +81,8 @@ export const actions = {
 			fav_fruit,
 			fav_soup,
 			fav_movie,
+			length,
+			hair_color,
 		});
 
 		const { data } = await fetch(`${directus}/person/${id}`, {
