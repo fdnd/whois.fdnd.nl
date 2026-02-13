@@ -1350,6 +1350,7 @@
 				<option>Aap</option>
 				<option>Flamingo</option>
 				<option>Giraffe</option>
+				<option>Hommel</option>
 				<option>Hond</option>
 				<option>Kat</option>
 				<option>Koala</option>
