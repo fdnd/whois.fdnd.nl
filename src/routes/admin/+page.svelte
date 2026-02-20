@@ -151,6 +151,7 @@
 			<label for="hair_color">Haarkleur</label>
 			<select name="hair_color" id="hair_color" bind:value={hair_color}>
 				<option></option>
+				<option>Rood</option>
 				<option>Bruin</option>
 				<option>Zwart</option>
 				<option>Blond</option>
